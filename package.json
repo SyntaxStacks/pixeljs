@@ -2,7 +2,7 @@
   "name": "pixeljs",
   "version": "0.2.0",
   "description": "Javascript Game Engine",
-  "main": "lib/engine.js",
+  "main": "./lib/pixeljs.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,5 +18,28 @@
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/SyntaxStacks/pixeljs/issues"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "createjs": "global:createjs"
+  },
+  "dependencies": {
+    "createjs": "*",
+    "browserify-shim": "~3.8.1",
+    "bluebird": "~2.9.14",
+    "hammerjs": "*",
+    "node-buzz": "*",
+    "lodash": "~3.6.0"
+  },
+  "devDependencies": {
+    "jshint": "",
+    "grunt": "0.4.4",
+    "browserify": "~3.44",
+    "grunt-browserify": "~2.0.3",
+    "grunt-contrib-watch": "~0.6.1"
   }
 }
