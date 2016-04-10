@@ -2,7 +2,7 @@
   "name": "pixeljs",
   "version": "0.2.3",
   "description": "Javascript Game Engine",
-  "main": "./lib/pixeljs.js",
+  "main": "./dist/pixel.js",
   "scripts": {
     "test": "npm run test:lint && npm run test:unit",
     "test:unit": "karma start",
