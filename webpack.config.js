@@ -3,6 +3,8 @@ module.exports = {
   entry: ["./engine.js"],
   output: {
     path: __dirname + "/dist",
-    filename: "pixel.js"
+    filename: "pixel.js",
+    libraryTarget: 'umd',
+    library: 'pixeljs'
   }
-}
+};
