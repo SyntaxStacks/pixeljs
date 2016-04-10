@@ -4,9 +4,15 @@
   "description": "Javascript Game Engine",
   "main": "./lib/pixeljs.js",
   "scripts": {
-    "test": "karma start",
+    "test": "npm run test:lint && npm run test:unit",
+    "test:unit": "karma start",
+    "test:lint": "jshint",
+    "build": "webpack",
     "webpack": "webpack",
-    "karma": "karma"
+    "karma": "karma",
+    "preversion": "npm test",
+    "version": "npm run build && git add -A dist",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
@@ -21,14 +27,6 @@
   "bugs": {
     "url": "https://github.com/SyntaxStacks/pixeljs/issues"
   },
-  "browserify": {
-    "transform": [
-      "browserify-shim"
-    ]
-  },
-  "browserify-shim": {
-    "createjs": "global:createjs"
-  },
   "dependencies": {
     "createjs": "*",
     "bluebird": "~2.9.14",
@@ -36,11 +34,7 @@
     "lodash": "~3.6.0"
   },
   "devDependencies": {
-    "browserify": "~3.44",
     "chai": "^3.5.0",
-    "grunt": "0.4.4",
-    "grunt-browserify": "~2.0.3",
-    "grunt-contrib-watch": "~0.6.1",
     "jshint": "",
     "karma": "^0.13.22",
     "karma-chai": "^0.1.0",
@@ -55,7 +49,6 @@
     "karma-webpack": "^1.7.0",
     "mocha": "^2.4.5",
     "phantomjs-prebuilt": "^2.1.7",
-    "requirejs": "^2.2.0",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
     "webpack": "^1.12.14"
