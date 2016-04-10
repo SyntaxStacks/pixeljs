@@ -1,6 +1,6 @@
 {
   "name": "pixeljs",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Javascript Game Engine",
   "main": "./lib/pixeljs.js",
   "scripts": {
